@@ -1,4 +1,4 @@
-- [ ] add readme
+- [x] add readme
 - [ ] add documentation
 - [ ] make site arbic and english
 - [ ] make light and dark mode
