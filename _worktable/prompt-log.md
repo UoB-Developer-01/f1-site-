@@ -30,3 +30,18 @@ Created `TECHNICAL_DOCS.md` covering:
 - **Image handling** — lazy loading and error fallback
 - **Animations** — all four animation mechanisms in one reference table
 - **Extension guide** — how to add drivers, update stat references, or add new stat columns
+
+# Support arabic
+
+```
+to @index.html make it in arabic and english
+```
+
+Done. The page now has full English/Arabic bilingual support:
+
+- **Language toggle button** in the nav (top-right) switches between EN ↔ عربي
+- **RTL layout** activates automatically for Arabic — card borders flip sides, stat bars fill right-to-left, corner decorations mirror, hover direction reverses
+- **Cairo Arabic font** loaded alongside Barlow Condensed/Titillium Web
+- All text translated: nav, hero, section header, card stats labels, rank label, championship badge, footer
+- Driver names, nationalities, years, and bios all have Arabic versions
+- Page `<title>` and `lang`/`dir` attributes on `<html>` update on toggle

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Top 10 Formula 1 Racers of All Time</title>
-<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&family=Barlow+Condensed:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
     --red: #E10600;
@@ -22,7 +22,6 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -32,7 +31,8 @@
     overflow-x: hidden;
   }
 
-  /* ── CARBON TEXTURE ── */
+  html[lang="ar"] body { font-family: 'Cairo', sans-serif; }
+
   body::before {
     content: '';
     position: fixed;
@@ -59,11 +59,7 @@
     height: 56px;
   }
 
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
+  .nav-logo { display: flex; align-items: center; gap: 0.75rem; }
 
   .nav-f1-badge {
     background: var(--red);
@@ -72,9 +68,8 @@
     font-weight: 900;
     font-size: 1.1rem;
     letter-spacing: 0.05em;
-    padding: 3px 10px 2px;
+    padding: 3px 18px 2px 10px;
     clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
-    padding-right: 18px;
   }
 
   .nav-title {
@@ -86,11 +81,39 @@
     color: var(--off-white);
   }
 
+  html[lang="ar"] .nav-title { font-family: 'Cairo', sans-serif; letter-spacing: 0; }
+
+  .nav-right { display: flex; align-items: center; gap: 1rem; }
+
   .nav-stripe {
     height: 3px;
     width: 80px;
     background: repeating-linear-gradient(90deg, var(--red) 0 8px, transparent 8px 14px);
   }
+
+  .lang-btn {
+    background: transparent;
+    border: 1px solid rgba(225,6,0,0.5);
+    color: var(--red);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    padding: 5px 20px 5px 14px;
+    clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-transform: uppercase;
+  }
+
+  html[lang="ar"] .lang-btn {
+    font-family: 'Cairo', sans-serif;
+    letter-spacing: 0;
+    clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%);
+    padding: 5px 14px 5px 20px;
+  }
+
+  .lang-btn:hover { background: var(--red); color: #fff; }
 
   /* ── HERO ── */
   .hero {
@@ -104,13 +127,7 @@
     padding-top: 56px;
   }
 
-  /* animated speed lines */
-  .hero-lines {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-  }
+  .hero-lines { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
 
   .speed-line {
     position: absolute;
@@ -127,28 +144,21 @@
     100% { transform: translateX(100vw); opacity: 0; }
   }
 
-  /* checkered flag band */
   .checkered-band {
     position: absolute;
     bottom: 0; left: 0; right: 0;
     height: 40px;
-    background-image:
-      repeating-conic-gradient(#fff 0% 25%, transparent 0% 50%);
+    background-image: repeating-conic-gradient(#fff 0% 25%, transparent 0% 50%);
     background-size: 20px 20px;
     opacity: 0.07;
   }
 
-  .checkered-band-top {
-    bottom: auto; top: 56px;
-    opacity: 0.05;
-  }
+  .checkered-band-top { bottom: auto; top: 56px; opacity: 0.05; }
 
-  /* hero red diagonal slash */
   .hero-slash {
     position: absolute;
     top: 0; right: -10%;
-    width: 55%;
-    height: 100%;
+    width: 55%; height: 100%;
     background: linear-gradient(135deg, transparent 30%, rgba(225,6,0,0.06) 30%);
     pointer-events: none;
   }
@@ -174,12 +184,10 @@
     gap: 1rem;
   }
 
-  .hero-eyebrow::before,
-  .hero-eyebrow::after {
-    content: '';
-    height: 1px;
-    width: 60px;
-    background: var(--red);
+  html[lang="ar"] .hero-eyebrow { font-family: 'Cairo', sans-serif; letter-spacing: 0.05em; }
+
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content: ''; height: 1px; width: 60px; background: var(--red);
   }
 
   .hero-title {
@@ -193,10 +201,10 @@
     text-shadow: 0 0 80px rgba(225,6,0,0.3);
   }
 
-  .hero-title span {
-    color: var(--red);
-    display: block;
-  }
+  html[lang="ar"] .hero-title { font-family: 'Cairo', sans-serif; letter-spacing: 0; }
+
+  .hero-title .ht1 { color: var(--white); display: block; }
+  .hero-title .ht2 { color: var(--red); display: block; }
 
   .hero-subtitle {
     margin-top: 1.5rem;
@@ -207,6 +215,8 @@
     text-transform: uppercase;
     color: var(--text-muted);
   }
+
+  html[lang="ar"] .hero-subtitle { font-family: 'Cairo', sans-serif; letter-spacing: 0.03em; }
 
   .hero-scroll-cue {
     margin-top: 3rem;
@@ -221,6 +231,7 @@
     animation: bob 2s infinite ease-in-out;
   }
 
+  html[lang="ar"] .hero-scroll-cue { font-family: 'Cairo', sans-serif; letter-spacing: 0; }
   .hero-scroll-cue svg { opacity: 0.5; }
 
   @keyframes bob {
@@ -228,7 +239,6 @@
     50% { transform: translateY(6px); }
   }
 
-  /* big red number behind hero */
   .hero-bg-number {
     position: absolute;
     font-family: 'Barlow Condensed', sans-serif;
@@ -239,8 +249,7 @@
     user-select: none;
     pointer-events: none;
     z-index: 1;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -48%);
   }
 
@@ -259,15 +268,13 @@
     letter-spacing: 0.05em;
   }
 
-  .section-header h2 em {
-    color: var(--red);
-    font-style: normal;
-  }
+  html[lang="ar"] .section-header h2 { font-family: 'Cairo', sans-serif; letter-spacing: 0; }
+
+  .section-header h2 em { color: var(--red); font-style: normal; }
 
   .section-divider {
     margin: 1rem auto 0;
-    width: 80px;
-    height: 3px;
+    width: 80px; height: 3px;
     background: var(--red);
     position: relative;
   }
@@ -275,10 +282,8 @@
   .section-divider::before {
     content: '';
     position: absolute;
-    left: 90px;
-    top: 0;
-    width: 20px;
-    height: 3px;
+    left: 90px; top: 0;
+    width: 20px; height: 3px;
     background: var(--red);
     opacity: 0.4;
   }
@@ -309,6 +314,11 @@
     min-height: 220px;
   }
 
+  html[lang="ar"] .driver-card {
+    border-left: 1px solid var(--card-border);
+    border-right: 3px solid var(--red);
+  }
+
   .driver-card::before {
     content: '';
     position: absolute;
@@ -322,13 +332,18 @@
   .driver-card:hover {
     transform: translateY(-4px) translateX(4px);
     box-shadow: -8px 8px 40px rgba(225,6,0,0.2), 0 20px 60px rgba(0,0,0,0.5);
-    border-left-color: var(--red);
     border-color: rgba(225,6,0,0.4);
+    border-left-color: var(--red);
+  }
+
+  html[lang="ar"] .driver-card:hover {
+    transform: translateY(-4px) translateX(-4px);
+    box-shadow: 8px 8px 40px rgba(225,6,0,0.2), 0 20px 60px rgba(0,0,0,0.5);
+    border-right-color: var(--red);
   }
 
   .driver-card:hover::before { opacity: 1; }
 
-  /* rank column */
   .card-rank {
     display: flex;
     flex-direction: column;
@@ -339,6 +354,8 @@
     background: rgba(225,6,0,0.03);
     grid-row: 1 / 3;
   }
+
+  html[lang="ar"] .card-rank { border-right: none; border-left: 1px solid var(--card-border); }
 
   .rank-number {
     font-family: 'Barlow Condensed', sans-serif;
@@ -357,7 +374,8 @@
     margin-top: 0.2rem;
   }
 
-  /* photo column */
+  html[lang="ar"] .rank-label { font-family: 'Cairo', sans-serif; letter-spacing: 0; font-size: 0.72rem; }
+
   .card-photo {
     position: relative;
     grid-row: 1 / 3;
@@ -366,8 +384,7 @@
   }
 
   .card-photo img {
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     object-fit: cover;
     object-position: top center;
     filter: grayscale(20%) contrast(1.05);
@@ -379,7 +396,6 @@
     filter: grayscale(0%) contrast(1.1);
   }
 
-  /* red overlay strip on photo */
   .card-photo::after {
     content: '';
     position: absolute;
@@ -388,7 +404,6 @@
     background: var(--red);
   }
 
-  /* info column */
   .card-info {
     padding: 1.5rem 2rem;
     display: flex;
@@ -397,11 +412,9 @@
     border-right: 1px solid var(--card-border);
   }
 
-  .driver-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-  }
+  html[lang="ar"] .card-info { border-right: none; border-left: 1px solid var(--card-border); }
+
+  .driver-meta { display: flex; flex-direction: column; gap: 0.2rem; }
 
   .driver-nationality {
     font-family: 'Barlow Condensed', sans-serif;
@@ -411,6 +424,8 @@
     text-transform: uppercase;
     font-weight: 600;
   }
+
+  html[lang="ar"] .driver-nationality { font-family: 'Cairo', sans-serif; letter-spacing: 0.05em; }
 
   .driver-name {
     font-family: 'Barlow Condensed', sans-serif;
@@ -422,6 +437,8 @@
     color: var(--white);
   }
 
+  html[lang="ar"] .driver-name { font-family: 'Cairo', sans-serif; letter-spacing: 0; text-transform: none; }
+
   .driver-years {
     font-size: 0.8rem;
     color: var(--text-muted);
@@ -429,11 +446,7 @@
     margin-top: 0.3rem;
   }
 
-  .driver-teams {
-    font-size: 0.75rem;
-    color: #666;
-    margin-top: 0.15rem;
-  }
+  .driver-teams { font-size: 0.75rem; color: #666; margin-top: 0.15rem; }
 
   .championships-badge {
     display: inline-flex;
@@ -446,11 +459,9 @@
     clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
   }
 
-  .champ-icon {
-    width: 16px;
-    height: 16px;
-    color: var(--red);
-  }
+  html[lang="ar"] .championships-badge { clip-path: polygon(0 0, 100% 0, 100% 100%, 5% 100%); }
+
+  .champ-icon { width: 16px; height: 16px; color: var(--red); }
 
   .champ-count {
     font-family: 'Barlow Condensed', sans-serif;
@@ -459,16 +470,11 @@
     color: var(--red);
   }
 
-  .champ-label {
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    letter-spacing: 0.1em;
-  }
+  .champ-label { font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.1em; }
 
-  /* stats column */
-  .card-stats {
-    padding: 1.5rem 2rem;
-  }
+  html[lang="ar"] .champ-label { font-family: 'Cairo', sans-serif; letter-spacing: 0; font-size: 0.75rem; }
+
+  .card-stats { padding: 1.5rem 2rem; }
 
   .stats-grid {
     display: grid;
@@ -477,11 +483,7 @@
     margin-bottom: 1.2rem;
   }
 
-  .stat-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.1rem;
-  }
+  .stat-item { display: flex; flex-direction: column; gap: 0.1rem; }
 
   .stat-value {
     font-family: 'Barlow Condensed', sans-serif;
@@ -498,6 +500,8 @@
     text-transform: uppercase;
   }
 
+  html[lang="ar"] .stat-label { font-family: 'Cairo', sans-serif; letter-spacing: 0; font-size: 0.7rem; }
+
   .stat-bar {
     height: 2px;
     background: var(--card-border);
@@ -513,6 +517,8 @@
     transition: width 1s ease;
   }
 
+  html[lang="ar"] .stat-bar-fill { left: auto; right: 0; }
+
   .driver-bio {
     font-size: 0.82rem;
     line-height: 1.65;
@@ -521,27 +527,34 @@
     padding-top: 1rem;
   }
 
-  /* corner decoration */
+  html[lang="ar"] .driver-bio {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.9;
+  }
+
   .corner-deco {
     position: absolute;
     top: 0; right: 0;
-    width: 0;
-    height: 0;
+    width: 0; height: 0;
     border-style: solid;
     border-width: 0 40px 40px 0;
     border-color: transparent rgba(225,6,0,0.5) transparent transparent;
     transition: border-color 0.3s;
   }
 
-  .driver-card:hover .corner-deco {
-    border-color: transparent var(--red) transparent transparent;
+  html[lang="ar"] .corner-deco {
+    right: auto; left: 0;
+    border-width: 40px 40px 0 0;
+    border-color: rgba(225,6,0,0.5) transparent transparent transparent;
   }
+
+  .driver-card:hover .corner-deco { border-color: transparent var(--red) transparent transparent; }
+  html[lang="ar"] .driver-card:hover .corner-deco { border-color: var(--red) transparent transparent transparent; }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 1000px) {
-    .driver-card {
-      grid-template-columns: 80px 220px 1fr;
-    }
+    .driver-card { grid-template-columns: 80px 220px 1fr; }
   }
 
   @media (max-width: 768px) {
@@ -550,37 +563,27 @@
       grid-template-rows: 200px auto auto;
     }
     .card-rank {
-      grid-column: 1;
-      grid-row: 2 / 4;
+      grid-column: 1; grid-row: 2 / 4;
       border-right: 1px solid var(--card-border);
       padding: 1rem 0.5rem;
     }
+    html[lang="ar"] .card-rank { border-right: none; border-left: 1px solid var(--card-border); }
     .rank-number { font-size: 2.2rem; }
-    .card-photo {
-      grid-column: 1 / 3;
-      grid-row: 1;
-      height: 200px;
-    }
+    .card-photo { grid-column: 1 / 3; grid-row: 1; height: 200px; }
     .card-info {
-      grid-column: 2;
-      grid-row: 2;
+      grid-column: 2; grid-row: 2;
       padding: 1rem 1rem 0.5rem;
       border-right: none;
       border-bottom: 1px solid var(--card-border);
     }
-    .card-stats {
-      grid-column: 2;
-      grid-row: 3;
-      padding: 1rem;
-    }
+    html[lang="ar"] .card-info { border-left: none; }
+    .card-stats { grid-column: 2; grid-row: 3; padding: 1rem; }
     .stats-grid { grid-template-columns: repeat(4, 1fr); }
   }
 
   @media (max-width: 520px) {
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .driver-card {
-      grid-template-columns: 50px 1fr;
-    }
+    .driver-card { grid-template-columns: 50px 1fr; }
   }
 
   /* ── FOOTER ── */
@@ -595,6 +598,8 @@
     letter-spacing: 0.1em;
   }
 
+  html[lang="ar"] footer { font-family: 'Cairo', sans-serif; letter-spacing: 0; font-size: 0.85rem; }
+
   footer strong { color: var(--red); }
 
   /* ── SCROLL REVEAL ── */
@@ -604,276 +609,331 @@
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
 
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  /* stagger each card */
   .driver-card:nth-child(even) { border-left-color: var(--red); }
-
+  html[lang="ar"] .driver-card:nth-child(even) { border-right-color: var(--red); }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">
     <span class="nav-f1-badge">F1</span>
-    <span class="nav-title">Greatest Drivers</span>
+    <span class="nav-title" data-i18n="navTitle">Greatest Drivers</span>
   </div>
-  <div class="nav-stripe"></div>
+  <div class="nav-right">
+    <div class="nav-stripe"></div>
+    <button class="lang-btn" id="langBtn" onclick="toggleLang()">عربي</button>
+  </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="checkered-band checkered-band-top"></div>
   <div class="hero-lines" id="heroLines"></div>
   <div class="hero-slash"></div>
   <div class="hero-bg-number">10</div>
-
   <div class="hero-content">
-    <div class="hero-eyebrow">Formula 1</div>
+    <div class="hero-eyebrow" data-i18n="eyebrow">Formula 1</div>
     <h1 class="hero-title">
-      Top 10<span>Racers</span>
+      <span class="ht1" data-i18n="ht1">Top 10</span>
+      <span class="ht2" data-i18n="ht2">Racers</span>
     </h1>
-    <p class="hero-subtitle">The Greatest Drivers in the History of the Sport</p>
+    <p class="hero-subtitle" data-i18n="subtitle">The Greatest Drivers in the History of the Sport</p>
     <div class="hero-scroll-cue">
-      <span>Scroll</span>
+      <span data-i18n="scroll">Scroll</span>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M12 5v14M5 12l7 7 7-7"/>
       </svg>
     </div>
   </div>
-
   <div class="checkered-band"></div>
 </section>
 
-<!-- SECTION HEADER -->
 <div class="section-header">
-  <h2>The <em>All-Time</em> Greats</h2>
+  <h2 id="sectionTitle"></h2>
   <div class="section-divider"></div>
 </div>
 
-<!-- DRIVERS -->
 <main class="drivers-container" id="drivers"></main>
 
-<!-- FOOTER -->
 <footer>
-  <p>Rankings represent a balanced assessment of championships, consistency &amp; legacy &mdash; across eras, teams, and regulation changes.</p>
-  <p style="margin-top:0.5rem">Compiled from official <strong>Formula 1</strong> records &bull; Images via Wikimedia Commons</p>
+  <p id="f1"></p>
+  <p style="margin-top:0.5rem" id="f2"></p>
 </footer>
 
 <script>
+const T = {
+  en: {
+    navTitle:  "Greatest Drivers",
+    eyebrow:   "Formula 1",
+    ht1:       "Top 10",
+    ht2:       "Racers",
+    subtitle:  "The Greatest Drivers in the History of the Sport",
+    scroll:    "Scroll",
+    section:   'The <em>All-Time</em> Greats',
+    rank:      "Rank",
+    champ:     "World Champion",
+    wins:      "Wins",
+    poles:     "Pole Positions",
+    podiums:   "Podiums",
+    fastest:   "Fastest Laps",
+    f1:        "Rankings represent a balanced assessment of championships, consistency &amp; legacy &mdash; across eras, teams, and regulation changes.",
+    f2:        "Compiled from official <strong>Formula 1</strong> records &bull; Images via Wikimedia Commons",
+    toggle:    "عربي"
+  },
+  ar: {
+    navTitle:  "أعظم السائقين",
+    eyebrow:   "الفورمولا 1",
+    ht1:       "أفضل 10",
+    ht2:       "سائقين",
+    subtitle:  "أعظم السائقين في تاريخ الرياضة",
+    scroll:    "مرر",
+    section:   'عظماء <em>كل الأزمان</em>',
+    rank:      "المرتبة",
+    champ:     "بطل العالم",
+    wins:      "انتصارات",
+    poles:     "أعمدة الانطلاق",
+    podiums:   "المنصات",
+    fastest:   "أسرع أدوار",
+    f1:        "تمثّل التصنيفات تقييماً متوازناً للبطولات والاتساق والإرث — عبر الحقب والفرق وتغييرات اللوائح.",
+    f2:        "مُجمَّع من سجلات <strong>الفورمولا 1</strong> الرسمية &bull; الصور عبر ويكيميديا كومنز",
+    toggle:    "English"
+  }
+};
+
 const drivers = [
   {
     rank: 1,
-    name: "Lewis Hamilton",
-    nationality: "British",
-    years: "2007 – Present",
+    name: "Lewis Hamilton",       nameAr: "لويس هاميلتون",
+    nat: "British",               natAr: "بريطاني",
+    years: "2007 – Present",      yearsAr: "2007 – الحاضر",
     teams: "McLaren · Mercedes",
-    championships: 7,
-    stats: { wins: 103, poles: 102, podiums: 191, fastestLaps: 54 },
+    champs: 7,
+    stats: { wins:103, poles:102, podiums:191, fastest:54 },
     bio: "Lewis Hamilton stands as one of the most decorated drivers in Formula 1 history. The British driver broke numerous records, including Michael Schumacher's all-time wins record. Known for his exceptional consistency, racecraft, and mental fortitude, Hamilton has dominated the Mercedes era since 2013. His seven world championships tie him with Michael Schumacher for the most in F1 history. Beyond racing, Hamilton has been a prominent advocate for diversity and social justice in motorsport.",
-    img: "f1_images/hamilton.jpg",
-    maxWins: 103
+    bioAr: "لويس هاميلتون من أكثر السائقين تتويجاً في تاريخ الفورمولا 1. كسر الرقم القياسي لمايكل شوماخر في عدد الانتصارات، وفاز بسبعة ألقاب عالمية تُساوي رصيد شوماخر. اشتُهر بثباته الاستثنائي وقدراته في السباق وصلابته الذهنية، مما جعله محور حقبة مرسيدس منذ 2013. وبعيداً عن المضمار، برز مناضلاً بارزاً من أجل التنوع والعدالة الاجتماعية.",
+    img: "f1_images/hamilton.jpg"
   },
   {
     rank: 2,
-    name: "Michael Schumacher",
-    nationality: "German",
-    years: "1991–2006 · 2010–2012",
+    name: "Michael Schumacher",   nameAr: "مايكل شوماخر",
+    nat: "German",                natAr: "ألماني",
+    years: "1991–2006 · 2010–2012", yearsAr: "1991–2006 · 2010–2012",
     teams: "Jordan · Benetton · Ferrari · Mercedes",
-    championships: 7,
-    stats: { wins: 91, poles: 68, podiums: 155, fastestLaps: 41 },
+    champs: 7,
+    stats: { wins:91, poles:68, podiums:155, fastest:41 },
     bio: "Michael Schumacher revolutionized Formula 1 with his aggressive driving style and meticulous attention to detail. He dominated the sport in the late 1990s and early 2000s, bringing Ferrari back to championship glory after 21 years. His seven world championships remained the record until Lewis Hamilton matched it. Schumacher's work ethic, perfectionism, and ability to consistently extract maximum performance from his machinery set a new standard for professionalism in motorsport.",
-    img: "f1_images/schumacher.jpg",
-    maxWins: 103
+    bioAr: "ثوّر مايكل شوماخر الفورمولا 1 بأسلوبه العدواني في القيادة وعنايته الدقيقة بالتفاصيل. هيمن على الرياضة في أواخر التسعينيات ومطلع الألفية الثالثة، وأعاد فيراري إلى مجد الألقاب بعد 21 عاماً. ظلّ رقمه القياسي البالغ سبعة ألقاب صامداً حتى سوّاه هاميلتون. وضع شوماخر معياراً جديداً للاحترافية في الموتورسبورت.",
+    img: "f1_images/schumacher.jpg"
   },
   {
     rank: 3,
-    name: "Juan Manuel Fangio",
-    nationality: "Argentine",
-    years: "1950 – 1958",
+    name: "Juan Manuel Fangio",   nameAr: "خوان مانويل فانجيو",
+    nat: "Argentine",             natAr: "أرجنتيني",
+    years: "1950 – 1958",         yearsAr: "1950 – 1958",
     teams: "Alfa Romeo · Mercedes · Ferrari · Maserati",
-    championships: 5,
-    stats: { wins: 24, poles: 29, podiums: 35, fastestLaps: 10 },
+    champs: 5,
+    stats: { wins:24, poles:29, podiums:35, fastest:10 },
     bio: "Juan Manuel Fangio is considered by many as the greatest racing driver of all time, despite competing in only 51 Grand Prix races. His five world championships were achieved across multiple teams and eras, demonstrating remarkable adaptability. Fangio's smooth, calculated driving style and racecraft were unparalleled in his era. He had an incredible winning percentage of 47%, and his ability to drive any car competitively across different teams showcased his supreme talent.",
-    img: "f1_images/fangio.jpg",
-    maxWins: 103
+    bioAr: "يُعدّ خوان مانويل فانجيو من قِبل كثيرين أعظم سائق سباقات على مرّ العصور، رغم مشاركته في 51 سباقاً فحسب. حقّق خمسة ألقاب عالمية مع فرق متعددة وعبر حقب مختلفة، مُظهراً قدرة استثنائية على التكيّف. بلغت نسبة فوزه 47%، وأثبت قيادته لأي سيارة بكفاءة عالية تفوّقه المطلق وموهبته الخارقة.",
+    img: "f1_images/fangio.jpg"
   },
   {
     rank: 4,
-    name: "Ayrton Senna",
-    nationality: "Brazilian",
-    years: "1984 – 1994",
+    name: "Ayrton Senna",         nameAr: "أيرتون سينا",
+    nat: "Brazilian",             natAr: "برازيلي",
+    years: "1984 – 1994",         yearsAr: "1984 – 1994",
     teams: "Toleman · Lotus · McLaren · Williams",
-    championships: 3,
-    stats: { wins: 41, poles: 65, podiums: 80, fastestLaps: 19 },
-    bio: "Ayrton Senna was a phenomenal talent known for his aggressive racing style, qualifying mastery, and unwavering competitive spirit. His rivalry with Alain Prost produced some of the most dramatic moments in F1 history. Senna's raw speed in qualifying was legendary—he scored 65 pole positions in 162 races, a remarkable ratio. His three world championships came during highly competitive eras. Tragically, Senna's life was cut short in a fatal accident at the 1994 San Marino Grand Prix.",
-    img: "f1_images/senna.jpg",
-    maxWins: 103
+    champs: 3,
+    stats: { wins:41, poles:65, podiums:80, fastest:19 },
+    bio: "Ayrton Senna was a phenomenal talent known for his aggressive racing style, qualifying mastery, and unwavering competitive spirit. His rivalry with Alain Prost produced some of the most dramatic moments in F1 history. Senna's raw speed in qualifying was legendary—he scored 65 pole positions in 162 races. His three world championships came during highly competitive eras. Tragically, Senna's life was cut short in a fatal accident at the 1994 San Marino Grand Prix.",
+    bioAr: "كان أيرتون سينا موهبة استثنائية اشتُهر بأسلوبه العدواني وإتقانه للتأهيل وروحه التنافسية الأبيّة. خلّف تنافسه مع بروست أروع اللحظات في تاريخ الفورمولا 1. سجّل 65 موضع انطلاق أمامي في 162 سباقاً — نسبة مذهلة. وقد اختُطفت حياته إثر حادث مأساوي في جائزة سان مارينو الكبرى عام 1994.",
+    img: "f1_images/senna.jpg"
   },
   {
     rank: 5,
-    name: "Alain Prost",
-    nationality: "French",
-    years: "1980 – 1991",
+    name: "Alain Prost",          nameAr: "ألان بروست",
+    nat: "French",                natAr: "فرنسي",
+    years: "1980 – 1991",         yearsAr: "1980 – 1991",
     teams: "McLaren · Renault · Ferrari",
-    championships: 4,
-    stats: { wins: 51, poles: 33, podiums: 106, fastestLaps: 25 },
+    champs: 4,
+    stats: { wins:51, poles:33, podiums:106, fastest:25 },
     bio: "Alain Prost, 'The Professor,' was known for his calculated, intelligent approach to racing and superior racecraft. His rivalry with Ayrton Senna is legendary, producing two collisions that decided championships. Prost's four world championships demonstrate his consistency and adaptability across different eras and teams. He was equally skilled in strategic planning and executing perfect races, often setting up overtakes several laps in advance.",
-    img: "f1_images/prost.jpg",
-    maxWins: 103
+    bioAr: "ألان بروست، المعروف بـ'الأستاذ'، اشتُهر بنهجه المحسوب والذكي في السباق وبراعته التكتيكية الفائقة. تنافسه الأسطوري مع سينا أنتج أعنف اللحظات في تاريخ الرياضة. أثبتت ألقابه الأربعة اتساقه وقدرته على التكيّف، وكان يتفوّق دائماً في التخطيط الاستراتيجي وتنفيذ السباقات المثالية.",
+    img: "f1_images/prost.jpg"
   },
   {
     rank: 6,
-    name: "Sebastian Vettel",
-    nationality: "German",
-    years: "2007 – 2022",
+    name: "Sebastian Vettel",     nameAr: "سيباستيان فيتيل",
+    nat: "German",                natAr: "ألماني",
+    years: "2007 – 2022",         yearsAr: "2007 – 2022",
     teams: "BMW Sauber · Toro Rosso · Red Bull · Ferrari · Aston Martin",
-    championships: 4,
-    stats: { wins: 53, poles: 57, podiums: 122, fastestLaps: 38 },
+    champs: 4,
+    stats: { wins:53, poles:57, podiums:122, fastest:38 },
     bio: "Sebastian Vettel achieved four consecutive world championships between 2010–2013 with Red Bull Racing, demonstrating exceptional racecraft and consistency. His smooth, calculated driving style and strategic thinking made him a complete driver. Vettel's career with Ferrari, while ultimately not delivering a championship, showed his determination and professionalism. Beyond racing, Vettel has become known for his environmental activism and thoughtful commentary on social issues.",
-    img: "f1_images/vettel.jpg",
-    maxWins: 103
+    bioAr: "حقّق سيباستيان فيتيل أربعة ألقاب عالمية متتالية بين 2010 و2013 مع ريد بول، مُظهراً براعةً استثنائية وثباتاً نادراً. أسلوبه السلس وتفكيره الاستراتيجي جعلا منه سائقاً متكاملاً. ومسيرته مع فيراري أثبتت تصميمه واحترافيته. وخارج المضمار برز مدافعاً بارزاً عن البيئة.",
+    img: "f1_images/vettel.jpg"
   },
   {
     rank: 7,
-    name: "Jackie Stewart",
-    nationality: "Scottish",
-    years: "1965 – 1973",
+    name: "Jackie Stewart",       nameAr: "جاكي ستيوارت",
+    nat: "Scottish",              natAr: "اسكتلندي",
+    years: "1965 – 1973",         yearsAr: "1965 – 1973",
     teams: "BRM · Tyrrell",
-    championships: 3,
-    stats: { wins: 27, poles: 17, podiums: 43, fastestLaps: 5 },
-    bio: "Jackie Stewart was a three-time world champion who revolutionized safety in Formula 1, advocating for improved track conditions and driver protections after witnessing fellow drivers' tragic deaths. His smooth, calculated driving style emphasized consistency and precision. Stewart's 27 wins from 99 starts represent one of the best conversion rates in F1 history. His legacy as a safety advocate transformed the sport, making it considerably safer for subsequent generations.",
-    img: "f1_images/stewart.jpg",
-    maxWins: 103
+    champs: 3,
+    stats: { wins:27, poles:17, podiums:43, fastest:5 },
+    bio: "Jackie Stewart was a three-time world champion who revolutionized safety in Formula 1, advocating for improved track conditions and driver protections after witnessing fellow drivers' tragic deaths. His smooth, calculated driving style emphasized consistency and precision. Stewart's 27 wins from 99 starts represent one of the best conversion rates in F1 history. His legacy as a safety advocate transformed the sport for subsequent generations.",
+    bioAr: "جاكي ستيوارت بطل عالمي ثلاثي أحدث ثورة في معايير السلامة بالفورمولا 1، مطالباً بتحسين ظروف المضمار وحماية السائقين. اتّسمت قيادته بالسلاسة والدقة والاتساق. حقّق 27 فوزاً من 99 سباقاً — من أفضل نسب التحويل في تاريخ الفورمولا 1. وإرثه في مجال السلامة غيّر الرياضة للأبد.",
+    img: "f1_images/stewart.jpg"
   },
   {
     rank: 8,
-    name: "Nigel Mansell",
-    nationality: "British",
-    years: "1980 – 1994",
+    name: "Nigel Mansell",        nameAr: "نايجل مانسيل",
+    nat: "British",               natAr: "بريطاني",
+    years: "1980 – 1994",         yearsAr: "1980 – 1994",
     teams: "Lotus · McLaren · Ferrari · Williams",
-    championships: 1,
-    stats: { wins: 31, poles: 32, podiums: 59, fastestLaps: 6 },
+    champs: 1,
+    stats: { wins:31, poles:32, podiums:59, fastest:6 },
     bio: "Nigel Mansell, known as 'The Lion,' was an aggressive, determined driver who earned respect through sheer determination and bravery. His dominant 1992 season with Williams, when he won nine races, showcased his raw speed and racecraft. Mansell's popularity, charismatic personality, and larger-than-life character made him one of the sport's most beloved figures. His fighting spirit and never-say-die attitude made him a fan favorite throughout his career.",
-    img: "f1_images/mansell.jpg",
-    maxWins: 103
+    bioAr: "نايجل مانسيل، المعروف بـ'الأسد'، كان سائقاً عدوانياً وحازماً اكتسب احترامه بالتصميم والجرأة. تجلّى ذلك في موسمه المهيمن عام 1992 مع ويليامز حين فاز بتسعة سباقات. جعله مزيج شعبيته وشخصيته الكاريزمية ونفسه الطويل واحداً من أكثر شخصيات الرياضة محبوبية لدى الجمهور.",
+    img: "f1_images/mansell.jpg"
   },
   {
     rank: 9,
-    name: "Niki Lauda",
-    nationality: "Austrian",
-    years: "1971 – 1985",
+    name: "Niki Lauda",           nameAr: "نيكي لاودا",
+    nat: "Austrian",              natAr: "نمساوي",
+    years: "1971 – 1985",         yearsAr: "1971 – 1985",
     teams: "March · Ferrari · Brabham · McLaren",
-    championships: 3,
-    stats: { wins: 25, poles: 24, podiums: 54, fastestLaps: 24 },
+    champs: 3,
+    stats: { wins:25, poles:24, podiums:54, fastest:24 },
     bio: "Niki Lauda was a calculating, intelligent driver whose legendary rivalry with James Hunt produced unforgettable moments. His remarkable comeback from a horrific 1976 accident that left him with severe burns — competing again just weeks later — exemplified his mental toughness and determination. Lauda's three world championships came through brilliant racecraft and consistency. Post-racing, he became a successful team principal and television commentator.",
-    img: "f1_images/lauda.jpg",
-    maxWins: 103
+    bioAr: "كان نيكي لاودا سائقاً بارداً وذكياً، وتنافسه الأسطوري مع جيمس هانت أنتج لحظات لا تُنسى. عودته المذهلة بعد حادث مروّع عام 1976 خلّف حروقاً بالغة — وهو يتنافس مجدداً بعد أسابيع قليلة — أثبتت صلابته الذهنية الفائقة وعزيمته الحديدية. حصد ثلاثة ألقاب عالمية بقيادة رائعة وثبات استثنائي.",
+    img: "f1_images/lauda.jpg"
   },
   {
     rank: 10,
-    name: "Max Verstappen",
-    nationality: "Dutch",
-    years: "2015 – Present",
+    name: "Max Verstappen",       nameAr: "ماكس فيرستابن",
+    nat: "Dutch",                 natAr: "هولندي",
+    years: "2015 – Present",      yearsAr: "2015 – الحاضر",
     teams: "Toro Rosso · Red Bull Racing",
-    championships: 4,
-    stats: { wins: 63, poles: 40, podiums: 116, fastestLaps: 34 },
+    champs: 4,
+    stats: { wins:63, poles:40, podiums:116, fastest:34 },
     bio: "Max Verstappen is the youngest world champion in F1 history, securing his first title in 2021. His aggressive racing style, fearlessness, and raw speed have made him a dominant force in modern Formula 1. Verstappen's four world championships and record-breaking 2023 season — with 19 wins — have established him as a generational talent. At just 27 years old, Verstappen still has the potential to become the undisputed all-time greatest.",
-    img: "f1_images/verstappen.jpg",
-    maxWins: 103
+    bioAr: "ماكس فيرستابن أصغر بطل عالمي في تاريخ الفورمولا 1، مُحرزاً لقبه الأول عام 2021. أسلوبه العدواني وجرأته وسرعته الخام جعلا منه قوة مهيمنة في الفورمولا 1 الحديثة. أرست ألقابه الأربعة وموسمه القياسي عام 2023 — بـ19 فوزاً — مكانته بوصفه موهبة جيل. وفي سن 27 فقط يمتلك كل الإمكانات ليصبح الأعظم على الإطلاق.",
+    img: "f1_images/verstappen.jpg"
   }
 ];
 
-// trophy SVG
 const trophy = `<svg class="champ-icon" viewBox="0 0 24 24" fill="currentColor">
   <path d="M6 3h12v2c0 3.3-2 6.2-5 7.4V14h2a1 1 0 0 1 0 2h-6a1 1 0 0 1 0-2h2v-1.6C8 11.2 6 8.3 6 5V3zM4 5H2v1a5 5 0 0 0 4 4.9V9.8A3 3 0 0 1 4 7V5zm16 0h-2v2a3 3 0 0 1-2 2.8v1.1A5 5 0 0 0 20 6V5zM9 19h6v2H9z"/>
 </svg>`;
 
-function buildCard(d) {
-  const maxStat = 103; // Hamilton wins as reference
+function buildCard(d, lang) {
+  const t = T[lang];
+  const ar = lang === 'ar';
   return `
   <article class="driver-card reveal">
     <div class="corner-deco"></div>
     <div class="card-rank">
       <div class="rank-number">${String(d.rank).padStart(2,'0')}</div>
-      <div class="rank-label">Rank</div>
+      <div class="rank-label">${t.rank}</div>
     </div>
     <div class="card-photo">
-      <img src="${d.img}" alt="${d.name}" loading="lazy" onerror="this.style.background='#1a1a1a';this.style.display='block'">
+      <img src="${d.img}" alt="${ar ? d.nameAr : d.name}" loading="lazy" onerror="this.style.background='#1a1a1a'">
     </div>
     <div class="card-info">
       <div class="driver-meta">
-        <div class="driver-nationality">${d.nationality}</div>
-        <div class="driver-name">${d.name}</div>
-        <div class="driver-years">${d.years}</div>
+        <div class="driver-nationality">${ar ? d.natAr : d.nat}</div>
+        <div class="driver-name">${ar ? d.nameAr : d.name}</div>
+        <div class="driver-years">${ar ? d.yearsAr : d.years}</div>
         <div class="driver-teams">${d.teams}</div>
       </div>
       <div class="championships-badge">
         ${trophy}
-        <span class="champ-count">${d.championships}x</span>
-        <span class="champ-label">World Champion</span>
+        <span class="champ-count">${d.champs}x</span>
+        <span class="champ-label">${t.champ}</span>
       </div>
     </div>
     <div class="card-stats">
       <div class="stats-grid">
         <div class="stat-item">
           <div class="stat-value">${d.stats.wins}</div>
-          <div class="stat-label">Wins</div>
-          <div class="stat-bar"><div class="stat-bar-fill" style="width:${(d.stats.wins/maxStat*100).toFixed(1)}%"></div></div>
+          <div class="stat-label">${t.wins}</div>
+          <div class="stat-bar"><div class="stat-bar-fill" style="width:${(d.stats.wins/103*100).toFixed(1)}%"></div></div>
         </div>
         <div class="stat-item">
           <div class="stat-value">${d.stats.poles}</div>
-          <div class="stat-label">Pole Positions</div>
+          <div class="stat-label">${t.poles}</div>
           <div class="stat-bar"><div class="stat-bar-fill" style="width:${(d.stats.poles/102*100).toFixed(1)}%"></div></div>
         </div>
         <div class="stat-item">
           <div class="stat-value">${d.stats.podiums}</div>
-          <div class="stat-label">Podiums</div>
+          <div class="stat-label">${t.podiums}</div>
           <div class="stat-bar"><div class="stat-bar-fill" style="width:${(d.stats.podiums/191*100).toFixed(1)}%"></div></div>
         </div>
         <div class="stat-item">
-          <div class="stat-value">${d.stats.fastestLaps}</div>
-          <div class="stat-label">Fastest Laps</div>
-          <div class="stat-bar"><div class="stat-bar-fill" style="width:${(d.stats.fastestLaps/54*100).toFixed(1)}%"></div></div>
+          <div class="stat-value">${d.stats.fastest}</div>
+          <div class="stat-label">${t.fastest}</div>
+          <div class="stat-bar"><div class="stat-bar-fill" style="width:${(d.stats.fastest/54*100).toFixed(1)}%"></div></div>
         </div>
       </div>
-      <p class="driver-bio">${d.bio}</p>
+      <p class="driver-bio">${ar ? d.bioAr : d.bio}</p>
     </div>
   </article>`;
 }
 
-// Render cards
-document.getElementById('drivers').innerHTML = drivers.map(buildCard).join('');
+let lang = 'en';
 
-// Animated speed lines in hero
-const linesContainer = document.getElementById('heroLines');
-for (let i = 0; i < 12; i++) {
-  const line = document.createElement('div');
-  line.className = 'speed-line';
-  const topPct = Math.random() * 100;
-  const width = 100 + Math.random() * 300;
-  const delay = Math.random() * 4;
-  const duration = 2 + Math.random() * 2;
-  line.style.cssText = `top:${topPct}%;width:${width}px;animation-delay:${delay}s;animation-duration:${duration}s;`;
-  linesContainer.appendChild(line);
-}
-
-// Scroll reveal
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      entry.target.style.transitionDelay = '0.05s';
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.transitionDelay = '0.05s';
+      e.target.classList.add('visible');
+      revealObserver.unobserve(e.target);
     }
   });
 }, { threshold: 0.08 });
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+function render(l) {
+  const t = T[l];
+  const html = document.documentElement;
+  html.lang = l;
+  html.dir = l === 'ar' ? 'rtl' : 'ltr';
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+
+  document.getElementById('sectionTitle').innerHTML = t.section;
+  document.getElementById('f1').innerHTML = t.f1;
+  document.getElementById('f2').innerHTML = t.f2;
+  document.getElementById('langBtn').textContent = t.toggle;
+
+  document.getElementById('drivers').innerHTML = drivers.map(d => buildCard(d, l)).join('');
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  document.title = l === 'ar'
+    ? 'أفضل 10 سائقين فورمولا 1 على الإطلاق'
+    : 'Top 10 Formula 1 Racers of All Time';
+}
+
+function toggleLang() {
+  lang = lang === 'en' ? 'ar' : 'en';
+  render(lang);
+}
+
+render('en');
+
+// Speed lines
+const lc = document.getElementById('heroLines');
+for (let i = 0; i < 12; i++) {
+  const ln = document.createElement('div');
+  ln.className = 'speed-line';
+  ln.style.cssText = `top:${Math.random()*100}%;width:${100+Math.random()*300}px;animation-delay:${Math.random()*4}s;animation-duration:${2+Math.random()*2}s;`;
+  lc.appendChild(ln);
+}
 </script>
 </body>
 </html>

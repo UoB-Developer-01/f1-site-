@@ -1,9 +1,9 @@
 - [x] add readme
 - [x] add documentation
-- [ ] make site arbic and english
+- [x] make site arbic and english
 - [ ] make light and dark mode
 - [ ] add driver age
-- [ ]
+- [ ] 
 - [ ]
 - [ ]
 - [ ]
